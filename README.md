@@ -98,7 +98,7 @@ python pre-processing.py \
   --train_type merged \
   --data_type train
 ```
-### ----------------------------------------------------------Experiment--------------------------------------------------------------
+### ---------------------- For Reproducing Experiment -------------------------
 
 Sure! Here’s an English README.md section that clearly explains your experiment comparing ORPO and SFT training methods using the LLM-as-a-Judge approach. It’s structured to be informative and easy to follow:
 
