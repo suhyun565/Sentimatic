@@ -1,5 +1,7 @@
 # Sentimatic: Emotion Shift Detection & Data Generation Pipeline from Customer Dialogues
 
+<img width="580" alt="Image" src="https://github.com/user-attachments/assets/6e59f0fd-6bdd-4e8c-b75c-6fe7ce361029" />
+
 This project is designed to analyze emotional shifts in customer support dialogues and automatically generate positive/negative text data for model training through a structured pipeline.
 
 ⸻
