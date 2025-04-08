@@ -98,19 +98,3 @@ python pre-processing.py \
   --train_type merged \
   --data_type train
 ```
-
-
-⸻
-
-Pipeline Overview
-	1.	Set up conda environment
-	2.	Analyze emotional shift in dialogues
-	3.	Merge sentiment results
-	4.	Classify based on score difference
-	5.	Train model to generate pairs
-	6.	Generate new data using the model
-	7.	Preprocess and finalize dataset
-
-⸻
-
-Let me know if you’d like to include example outputs, project structure, or usage tips!
