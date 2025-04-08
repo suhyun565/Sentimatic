@@ -1,10 +1,10 @@
-## Sentimatic: Emotion Shift Detection & Data Generation Pipeline from Customer Dialogues
+# Sentimatic: Emotion Shift Detection & Data Generation Pipeline from Customer Dialogues
 
 This project is designed to analyze emotional shifts in customer support dialogues and automatically generate positive/negative text data for model training through a structured pipeline.
 
 ⸻
 
-# 1. Create Conda Environment
+## 1. Create Conda Environment
 
 First, create a conda environment using the provided sentimatic.yaml:
 
@@ -15,7 +15,7 @@ conda activate sentimatic
 
 ⸻
 
-# 2. Detect Emotion Shift (sentiment_analysis.py)
+## 2. Detect Emotion Shift (sentiment_analysis.py)
 
 Run the script to detect emotional changes between “before” and “after” customer messages.
 
@@ -33,7 +33,7 @@ Arguments:
 
 ⸻
 
-# 3. Merge Sentiment CSVs (concat.py)
+## 3. Merge Sentiment CSVs (concat.py)
 
 Merge sentiment analysis results for a specific dataset split.
 
@@ -42,7 +42,7 @@ python concat.py --split train
 ```
 ⸻
 
-# 4. Classify by Sentiment Score Difference (classify.py)
+## 4. Classify by Sentiment Score Difference (classify.py)
 
 Classify samples based on the difference in sentiment scores:
 	•	If the difference > 0 → positive
@@ -54,7 +54,7 @@ python classify.py --split train
 
 ⸻
 
-# 5. Train the Generation Model (train.py)
+## 5. Train the Generation Model (train.py)
 
 Train a model to generate positive/negative response pairs.
 
@@ -71,7 +71,7 @@ Note: train_type can be positive, negative, or merged
 
 ⸻
 
-# 6. Generate Data using Trained Model (infer.py)
+## 6. Generate Data using Trained Model (infer.py)
 
 Generate positive/negative response data using the trained model.
 
@@ -88,7 +88,7 @@ python infer.py \
 
 ⸻
 
-# 7. Preprocess Generated Text (pre-processing.py)
+## 7. Preprocess Generated Text (pre-processing.py)
 
 Preprocess the generated text and finalize the PO dataset.
 
