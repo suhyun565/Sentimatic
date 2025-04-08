@@ -98,3 +98,69 @@ python pre-processing.py \
   --train_type merged \
   --data_type train
 ```
+### ------------------------------------------------------------------------------Experiment--------------------------------------------------------------------------------------------
+
+Sure! Here’s an English README.md section that clearly explains your experiment comparing ORPO and SFT training methods using the LLM-as-a-Judge approach. It’s structured to be informative and easy to follow:
+
+⸻
+
+ORPO vs SFT: Evaluating PO-Trained Dialogue Models with LLM-as-a-Judge
+
+This experiment evaluates two dialogue models trained using different PO (Preference Optimization) learning methods — ORPO and SFT — on their ability to handle real-world customer interactions.
+
+We compare the models using an LLM-as-a-Judge approach across three key criteria:
+	1.	Context Appropriateness – Is the response contextually relevant and coherent?
+	2.	Problem Solving Approach – Does the response actively and effectively address the user’s issue?
+	3.	Negative Emotion Management – How well does the response handle or defuse user frustration or dissatisfaction?
+
+⸻
+
+1. Train with ORPO (orpo.py)
+
+Train a dialogue model using the ORPO (Offline Reinforcement Preference Optimization) method on the PO data generated from the sentimatic pipeline.
+```python 
+python orpo.py \
+  --data_dir data/po/ \
+  --output_dir model/orpo/
+```
+Uses generated positive/negative pairs from the Sentimatic pipeline.
+
+⸻
+
+2. Train with SFT (sft.py)
+
+Train a dialogue model using Supervised Fine-Tuning (SFT) on publicly available seed datasets.
+```python 
+python sft.py \
+  --data_dir data/sft_seed/ \
+  --output_dir model/sft/
+```
+Uses open-domain SFT data as seed data for baseline comparison.
+
+⸻
+
+3. Evaluate with LLM-as-a-Judge (LLM-as-a-judge.py)
+
+Run model evaluation using an LLM to judge model responses from ORPO and SFT.
+```python 
+python LLM-as-a-judge.py \
+  --orpo_model_path model/orpo/ \
+  --sft_model_path model/sft/ \
+  --eval_data_path data/eval_prompts.json \
+  --output_path results/judge_raw.json
+```
+The judge model scores responses on:
+	•	Context Appropriateness
+	•	Problem Solving Approach
+	•	Negative Emotion Management
+
+⸻
+
+4. Aggregate Results (LLM-as-a-judge-result.py)
+
+Summarize and aggregate the evaluation results to determine which training method performs better.
+```python
+python LLM-as-a-judge-result.py \
+  --input_path results/judge_raw.json \
+  --output_path results/summary.json
+```
